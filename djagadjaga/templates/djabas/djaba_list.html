@@ -1,17 +1,28 @@
 <!DOCTYPE html>
+{% load static %}
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
     <title>{{title}}</title>
 </head>
 <body>
     <h1>Hello</h1>
+    <a href="/category_list">Виды жаб</a><br>
     {% for dj in djaba_list%}
 
-    {{dj.name}}
+    {{dj.name}} <br>
+    {{dj.category}} <br>
+    <a href="{{dj.get_absolute_url}}" title="Хозяин">
+        <div class="image image_link">
+            <img src="{{dj.image.url}}">
+        </div>
+    </a>
     <br>
-    <img src="{{dj.image.url}}">
+    <hr>
     {% endfor %}
+
+<div class="joinBtn">Привет</div>
 </body>
 </html>

@@ -1,4 +1,5 @@
 from django.db import models
+from django.urls import reverse
 
 class Category(models.Model):
     name = models.CharField("Вид", max_length=150)
@@ -36,4 +37,5 @@ class Djaba(models.Model):
         verbose_name = "Жаба"
         verbose_name_plural = "Жабы"
 
-
+    def get_absolute_url(self):
+        return reverse('jaba_owner', kwargs = {"pk": self.owner_id, "djaba_name": self.name})
