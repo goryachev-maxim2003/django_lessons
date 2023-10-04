@@ -1,13 +1,10 @@
-<!DOCTYPE html>
-{% load static %}
-<html lang="ru">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="{% static 'css/style.css' %}">
-    <title>Document</title>
-</head>
-<body>
+{% extends '../base.html' %}
+
+{% block title %}
+    Хозяин
+{% endblock title %}
+
+{% block content %}
     <header class="header">
         Хозяин лягушки по имени {{djaba_name}}
     </header>
@@ -15,5 +12,4 @@
     Фамилия: {{surname}} <br>
     Возраст: {{age}} <br> <br>
     <img src = "{{image.url}}" class="image"/>
-</body>
-</html>
+{% endblock content %}

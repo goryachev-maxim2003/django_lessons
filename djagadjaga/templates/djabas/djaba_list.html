@@ -1,13 +1,10 @@
-<!DOCTYPE html>
-{% load static %}
-<html lang="ru">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="{% static 'css/style.css' %}">
-    <title>{{title}}</title>
-</head>
-<body>
+{% extends '../base.html' %}
+
+{% block title %}
+    Жабы
+{% endblock title %}
+
+{% block content %}
     <h1>Hello</h1>
     <a href="/category_list">Виды жаб</a><br>
     {% for dj in djaba_list%}
@@ -24,5 +21,5 @@
     {% endfor %}
 
 <div class="joinBtn">Привет</div>
-</body>
-</html>
+
+{% endblock content %}

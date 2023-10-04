@@ -1,10 +1,9 @@
-<!DOCTYPE html>
-<html lang="ru">
-<head>
-    <meta charset="UTF-8">
-    <title>Категория</title>
-</head>
-<body>
-        <h1>{{object.name}}</h1>
-</body>
-</html>
+{% extends '../base.html' %}
+
+{% block title %}
+    Категория
+{% endblock title %}
+
+{% block content %}
+<h1>{{object.name}}</h1>
+{% endblock content %}
